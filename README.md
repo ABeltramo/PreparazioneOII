@@ -8,3 +8,7 @@ Lezioni ed esercizi per la preparazione delle lezioni OII
 5. [Ricorsione](ricorsione.md)
 6. [Programmazione dinamica](prog_dinamica.md)
 7. [Grafi](grafi.md)
+
+## Link utili
+1. [Lista ufficiale dei testi delle olimpiadi suddivisi per anno](https://github.com/olimpiadi-informatica/oii)
+2. [Olimpiadi online croate](http://hsin.hr/coci/)
