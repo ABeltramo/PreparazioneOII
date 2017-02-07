@@ -8,7 +8,49 @@ I problemi che dovrete risolvere alle olimpiadi impongono due importanti limiti 
 In questo capitolo ci occuperemo di misurare il tempo di un algoritmo mentre nel prossimo parleremo del problema della memoria.  
 
 ### Ordinamenti
-Uno dei problemi importanti dell'informatica riguarda l'ordinamento di un insieme di oggetti. Il più semplice algoritmo di ordinamento è la [Stupid Sort](https://it.wikipedia.org/wiki/Stupid_sort):
+
+Uno dei problemi noti dell'informatica riguarda l'ordinamento *efficiente* di un insieme di oggetti. Il più semplice algoritmo di ordinamento da implementare e da capire è sicuramente [Bubble Sort](https://it.wikipedia.org/wiki/Bubble_sort):
+
+```c++
+void BubbleSort(int *array, int elemN){
+   int alto;
+   for (alto = elemN; alto > 0; alto-- ){ 
+         for (int i=0; i<alto; i++){
+           if (array[i]>array[i+1]){ 
+             int tmp = array[i]; 
+             array[i] = array[i+1]; 
+             array[i+1] = tmp;
+           } 
+         }
+     }
+ }
+```
+
+Come *dovreste* sapere `BubbleSort` non è un algoritmo efficiente per l'ordinamento ma come possiamo misurare la sua complessità?  
+Innanzitutto definiamo l'unità base l'**istruzione**: un istruzione è una qualsiasi operazione eseguibile da un computer in un tempo costante **C**. Ad esempio `x+=1;` oppure `if(A == B)` sono istruzioni semplici.  
+Nel calcolo della complessità computazionale siamo interessati a capire quanto *tempo* impiega un determinato algoritmo dato un input di dimensione **N**.
+Proviamo a rifare l'analisi per `BubbleSort` partendo dalle istruzioni più interne:
+
+```C++
+    int tmp = array[i];             // *******************
+    array[i] = array[i+1];          //      BLOCCO A
+    array[i+1] = tmp;               // *******************
+```
+
+Queste tre istruzioni semplici impiegano ognuna tempo **C** quindi diremo che il blocco A impiega tempo **3C**. Proseguiamo verso l'esterno:
+
+```C++
+    for (int i=0; i<alto; i++){     // *******************
+        if (array[i]>array[i+1]){   //
+            // [... A ...]          //      BLOCCO B
+        }                           //
+    }                               // *******************
+```
+
+Il blocco B esegue un ciclo `for` che va da 0 ad `alto`. Questo ciclo esegue per `alto` volte il blocco `if` (che corrisponde ad una istruzione **C**). Supponiamo che nel *caso peggiore* l'array sia ordinato al contrario e quindi si entra nel blocco if ad ogni iterazione. In questo caso il blocco A (**3C**) + l'istruzione `if` (**C**) verrano eseguite per `alto` volte.  
+Possiamo concludere, quindi, dicendo che il blocco B ha una complessità nel caso peggiore di **alto \* 4C**.
+
+[Stupid Sort](https://it.wikipedia.org/wiki/Stupid_sort):
 
 ```language
 function stupid_sort(array)
