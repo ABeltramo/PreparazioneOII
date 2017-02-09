@@ -12,7 +12,7 @@ La libreria standard del C++ si compone di quattro componenti principali:
 3. *Functionals*: Possibilità di scrivere funzioni che ricevono diversi tipi di dati.
 4. *Iterators*: Astrazione dei puntatori classici.
 
-Alcuni componenti della libreria standard saranno fondamentali per i problemi che andrete a risolvere e per questo motivo li andremo ad analizzare in questo capitolo.
+Alcuni componenti della libreria standard saranno fondamentali per i problemi che andrete a risolvere e per questo motivo li analizzeremo in questo capitolo.
 
 ### Functionals
 
@@ -28,4 +28,14 @@ La funzione `stampa()` riceve come parametro un tipo di dato qualsiasi come `int
 Vedremo come questa libertà verrà sfruttata da tutti i componenti della libreria standard.
 
 ### Containers
+
+Un contenitore, nella sua forma più generale, è un oggetto dove possono essere inseriti altri oggetti. Esempi di contenitori sono i vettori, le liste, gli alberi. Tra i [contenitori](http://www.cplusplus.com/reference/stl/) presenti nella libreria standard andremo ad analizzare in particolare:
+
+1. **Vector**: generalizzazione del classico Array che consente di avere una dimensione dinamica.
+4. **Map**: array associativo del tipo <chiave,valore>
+5. **Bitset**: struttura molto compatta per rappresentare un array di `bool`
+
+#### Vector
+
+
 
