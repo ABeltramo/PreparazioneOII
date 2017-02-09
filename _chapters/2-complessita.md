@@ -91,23 +91,37 @@ function stupid_sort(array)
      array = random_permutation(array)
 ```
 
-Dato un array da ordinare si continua a permutarlo a random fino a quando esso non è ordinato. La cosa buffa è che il [teorema della scimmia instancabile](https://it.wikipedia.org/wiki/Teorema_della_scimmia_instancabile) ci permette di affermare che *prima o poi* la stupid sort riuscirà ad ordinare qualsiasi array in input.  
-Intuitivamente riusciamo a capire che non sia una buona soluzione ma come possiamo dimostrare questa supposizione? Ipotizziamo che l'array di Input abbia N elementi al suo interno e analizziamo in dettaglio il codice precedente:
+Dato un array da ordinare si continua a permutarlo a random fino a quando non è ordinato. La cosa buffa è che il [teorema della scimmia instancabile](https://it.wikipedia.org/wiki/Teorema_della_scimmia_instancabile) ci permette di affermare che *prima o poi* la stupid sort riuscirà ad ordinare qualsiasi array in input.  
+Intuitivamente riusciamo a capire che non sia una buona soluzione ma come possiamo dimostrare questa supposizione? Ipotizziamo che l'array di Input abbia **N** elementi al suo interno e analizziamo in dettaglio il codice precedente:  
+`is_sorted()`: questa funzione dato un array restituisce `true` se esso è ordinato, `false` altrimenti. Per poter sapere se un array è ordinato è sufficiente il seguente codice:
 
-1. `is_sorted()`: questa funzione dato un array restituisce `true` se esso è ordinato, `false` altrimenti. Per poter sapere se un array è ordinato è sufficiente il seguente codice:
-
-    ```c++
-    bool is_sorted(int array[N]){
-        for(int i=0;i<4;i++){           // Scorro l'array da 0 a N-1
-            if(array[i] > array[i+1])   // Se a[i] > a[i+1]
-                return false;           // Non è ordinato
-        }
-        return true;                    // Se ho passato tutto il for allora è ordinato
+```c++
+bool is_sorted(int array[N]){
+    for(int i=0;i<4;i++){           // Scorro l'array da 0 a N-1
+        if(array[i] > array[i+1])   // Se a[i] > a[i+1]
+            return false;           // Non è ordinato
     }
-    ```
+    return true;                    // Se ho passato tutto il for allora è ordinato
+}
+```
 
-    Quì si nasconde il primo ciclo che aumenta il tempo di esecuzione. Per quanto sia una funzione semplice un ciclo sulla dimensione dell'input è sempre da evitare. `is_sorted()` impiega **N-1** passi per completare la sua esecuzione.
-2. `random_permutation()`: 
+Quì si nasconde il primo ciclo che aumenta il tempo di esecuzione. Per quanto sia una funzione semplice un ciclo sulla dimensione dell'input è sempre da evitare. `is_sorted()` impiega **N-1** passi per completare la sua esecuzione.  
+
+`random_permutation()`: Anche quì si nasconde una complessità ulteriore. Intuitivamente, come minimo, per spostare casualmente gli elementi di un array bisogna scorrerli tutti. [Esempi reali](http://www.cplusplus.com/reference/algorithm/random_shuffle/) di algoritmi di permutazione indica una complessità lineare con la dimensione dell'input. Concludiamo, quindi, assumendo che `random_permutation()` ha una complessità **O(N)**.  
+
+Riguardiamo ora il codice della `stupid_sort` alla luce di quanto affermato:
+
+```c++
+function stupid_sort(array)
+   while not is_sorted(array)           // TEMPO O(N)
+     array = random_permutation(array)  // TEMPO O(N)
+```
+
+**N.B.** : potreste essere invogliati a dire che ad ogni passo del ciclo while l'algoritmo impiega *O(N^2)* facendo, in realtà, un grande errore. In realtà, ogni passo del ciclo impiega **O(N + N)** in quanto prima scorre il vettore *(N)* per vedere se è ordinato e, successivamente, lo riscorre per ordinarlo casualmente *(N)*. I due cicli non sono innestati!!!  
+
+Quindi? Qual'è la complessità computazionale di `stupid_sort`? Possiamo distinguere due casi:
+1. Caso migliore: il vettore in input è già ordinato. In questo caso abbiamo il miglior algoritmo del mondo per ordinare un vettore perchè impiega solo **N** passi ad accorgersi che è già ordinato!
+2. Caso peggiore: il ciclo `while` non ha un limite fissato (come per i `for` precedenti) non abbiamo quindi modo di dare una stima del tempo necessario perchè dipende dal caso. Per lo studio delle probabilità arriverà ad una conclusione ma con [tempi catastrofici](https://it.wikipedia.org/wiki/Stupid_sort#Tempo_di_esecuzione)
 
 ### **TL;DR**
 
