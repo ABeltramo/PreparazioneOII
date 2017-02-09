@@ -13,15 +13,14 @@ In C++ la manipolazione dei file avviene tramite la classe `fstream`; in partico
 L'esempio che segue legge dal file input.txt, una riga alla volta, tutti i numeri presenti, li somma ed infine stampa il risultato sul file output.txt.  
 **Input.txt**: la prima riga contiene N: il numero di righe del file successive alla prima riga. Le seguenti N righe contengono un numero.
 ```
-5
-1
-2
-3
--1
-16
+1  
+2  
+3  
+-1  
+16  
 ```
 
-```C++
+```c++
 #include <iostream>             // Input/Output stream library
 #include <fstream>              // File stream library
 using namespace std;            // Evito di dover specificare std::
@@ -43,8 +42,9 @@ int main() {
 ```
 
 **Output.txt**: viene restituita la somma dei numeri letti
+
 ```
-21
+21  
 ```
 
 La lettura/scrittura di tipi diversi dall'`int` avviene allo stesso modo. Il tipo di dato (e come interpretarlo dall'input) viene automaticamente dedotto dal tipo di variabile che viene usata per salvare/leggere i dati.  

@@ -87,15 +87,14 @@ In C++ la manipolazione dei file avviene tramite la classe <code class="highligh
 <p>L’esempio che segue legge dal file input.txt, una riga alla volta, tutti i numeri presenti, li somma ed infine stampa il risultato sul file output.txt.<br />
 <strong>Input.txt</strong>: la prima riga contiene N: il numero di righe del file successive alla prima riga. Le seguenti N righe contengono un numero.
 <code class="highlighter-rouge">
-5
-1
-2
-3
--1
-16
+1  
+2  
+3  
+-1  
+16  
 </code></p>
 
-<p>```C++
+<p>```c++
 #include <iostream>             // Input/Output stream library
 #include <fstream>              // File stream library
 using namespace std;            // Evito di dover specificare std::</fstream></iostream></p>
@@ -116,10 +115,11 @@ using namespace std;            // Evito di dover specificare std::</fstream></i
 }
 ```</p>
 
-<p><strong>Output.txt</strong>: viene restituita la somma dei numeri letti
-<code class="highlighter-rouge">
-21
-</code></p>
+<p><strong>Output.txt</strong>: viene restituita la somma dei numeri letti</p>
+
+<div class="highlighter-rouge"><pre class="highlight"><code>21  
+</code></pre>
+</div>
 
 <p>La lettura/scrittura di tipi diversi dall’<code class="highlighter-rouge">int</code> avviene allo stesso modo. Il tipo di dato (e come interpretarlo dall’input) viene automaticamente dedotto dal tipo di variabile che viene usata per salvare/leggere i dati.<br />
 Ad esempio <code class="highlighter-rouge">in &gt;&gt; Carattere</code> se Carattere è una variabile di tipo <code class="highlighter-rouge">Char</code> consentirà di leggere dal file di input un singolo carattere.</p>
