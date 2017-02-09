@@ -3,7 +3,7 @@
 
   {% include head.html %}
 
-  <body class="sidebar-overlay theme-base-0d">
+  <body>
 
     {% include sidebar.html %}
 
@@ -44,7 +44,12 @@
       })(document);
     </script>
     <footer>
-      <small>Copyright &copy; <a href="https://github.com/ABeltramo">ABeltramo.</a> {{ site.time | date: '%Y' }}</small>
+      <small>Copyright &copy; 
+        <a href="https://github.com/ABeltramo">ABeltramo.</a> {{ site.time | date: '%Y' }} 
+        <a href="https://creativecommons.org/licenses/by/3.0/it/deed.it">
+          <img style="display: inline; margin:0;" height="10px" src="https://mirrors.creativecommons.org/presskit/buttons/80x15/png/by.png">
+        </a>
+      </small>
     </footer>
   </body>
 </html>
