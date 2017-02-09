@@ -74,7 +74,7 @@ Possiamo ora considerare l'algoritmo `BubbleSort` nel suo insieme.
 Continuando ad eseguire il ciclo si ottiene la seguente equazione:
 
 <p align="center">
-    <img src="img/Compl_BubbleSort.png">
+    <img src="{{site.baseurl}}/img/Compl_BubbleSort.png">
 </p>
 
 Non ci interessano molto i calcoli quanto il risultato: la notazione *Teta(N^2)* significa che l'algoritmo sia nel caso migliore che nel caso peggiore impiega il quadrato della dimensione dell'input. Mi potreste chiedere: *"Dove sono finite le C?"* e io vi risponderei: *"Grazie per avermelo chiesto!"*. In realtà lo scopo del calcolo della complessità computazionale non è definire esattamente quanto tempo impiega un programma a completare la sua esecuzione; i secondi esatti dipendono da moltissime variabili come la velocità del processore, il suo set di istruzioni macchina, la compilazione in bytecode, etc etc.   
@@ -105,7 +105,7 @@ Intuitivamente riusciamo a capire che non sia una buona soluzione ma come possia
         return true;                    // Se ho passato tutto il for allora è ordinato
     }
     ```
-    
+
     Quì si nasconde il primo ciclo che aumenta il tempo di esecuzione. Per quanto sia una funzione semplice un ciclo sulla dimensione dell'input è sempre da evitare. `is_sorted()` impiega **N-1** passi per completare la sua esecuzione.
 2. `random_permutation()`: 
 
