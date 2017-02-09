@@ -1,3 +1,7 @@
+---
+layout: post
+title: Complessità Computazionale
+---
 # [Preparazione OII](README.md)
 ## Complessità computazionale
 I problemi che dovrete risolvere alle olimpiadi impongono due importanti limiti sui programmi che andrete a creare:

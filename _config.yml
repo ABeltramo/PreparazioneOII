@@ -1,0 +1,25 @@
+# Permalinks
+#
+# Use of `relative_permalinks` ensures post links from the index work properly.
+permalink:           pretty
+relative_permalinks: false
+
+# Setup
+title:               Preparazione OII
+tagline:             'Lezioni ed esercizi per la preparazione delle OII'
+description:         ''
+url:                 http://lanyon.getpoole.com
+baseurl:             ''
+collections:
+  chapters:
+    output: true
+    permalink: /chapters/:path/
+
+# About/contact
+author:
+  name:              Mark Otto
+  url:               https://twitter.com/mdo
+  email:             markdotto@gmail.com
+
+# Custom vars
+version:             1.0.0

@@ -1,0 +1,27 @@
+---
+layout: default
+title: Home
+---
+
+<h1>PreparazioneOII</h1>
+Lezioni ed esercizi per la preparazione delle OII
+
+<h2> Indice </h2>
+
+<ol>
+  {% for chapter in site.chapters %}
+    <li>
+      <a href="{{ chapter.url }}">{{ chapter.title }}</a>
+    </li>
+  {% endfor %}
+</ol>
+
+<h2> Link utili </h2>
+
+<br><a href="https://github.com/olimpiadi-informatica/oii">Lista ufficiale dei testi delle olimpiadi suddivisi per anno</a>
+<br><a href="http://hsin.hr/coci/">Olimpiadi online croate</a>
+
+<h2> Crediti </h2>
+Il lavoro quì proposto è basato sul <a href="http://www.imparando.net/sito/olimpiadi_di_informatica/guida_prima_edizione.pdf">testo ufficiale</a> (molto ben fatto) che potete trovare anche sul sito delle olimpiadi.  
+<br>Ho deciso di scrivere queste pagine per fornire un documento più semplice da leggere, concentrato solo sulle nozioni fondamentali tralasciando (purtroppo) i formalismi ed i dettagli teorici.
+

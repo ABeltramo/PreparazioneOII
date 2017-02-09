@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="en-us">
+
+  <head>
+  <link href="http://gmpg.org/xfn/11" rel="profile">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta http-equiv="content-type" content="text/html; charset=utf-8">
+
+  <!-- Enable responsiveness on mobile devices-->
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1">
+
+  <title>
+    
+      Preparazione OII &middot; Lezioni ed esercizi per la preparazione delle OII
+    
+  </title>
+
+  <!-- CSS -->
+  <link rel="stylesheet" href="/public/css/poole.css">
+  <link rel="stylesheet" href="/public/css/syntax.css">
+  <link rel="stylesheet" href="/public/css/lanyon.css">
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=PT+Serif:400,400italic,700%7CPT+Sans:400">
+
+  <!-- Icons -->
+  <link rel="apple-touch-icon-precomposed" sizes="144x144" href="/public/apple-touch-icon-precomposed.png">
+  <link rel="shortcut icon" href="/public/favicon.ico">
+
+  <!-- RSS -->
+  <link rel="alternate" type="application/rss+xml" title="RSS" href="/atom.xml">
+</head>
+
+
+  <body>
+
+    <!-- Target for toggling the sidebar `.sidebar-checkbox` is for regular
+     styles, `#sidebar-checkbox` for behavior. -->
+<input type="checkbox" class="sidebar-checkbox" id="sidebar-checkbox">
+
+<!-- Toggleable sidebar -->
+<div class="sidebar" id="sidebar">
+  <div class="sidebar-item">
+    <p></p>
+  </div>
+
+  <nav class="sidebar-nav">
+    <a class="sidebar-nav-item" href="/">Home</a>
+
+    
+
+    
+      <a class="sidebar-nav-item" href="/chapters/1-io_file/">I/O da file</a>
+    
+      <a class="sidebar-nav-item" href="/chapters/2-complessita/">Complessità Computazionale</a>
+    
+    <span class="sidebar-nav-item">Currently v1.0.0</span>
+  </nav>
+
+  <div class="sidebar-item">
+    <p>
+      &copy; 2017. All rights reserved.
+    </p>
+  </div>
+</div>
+
+
+    <!-- Wrap is the content to shift when toggling the sidebar. We wrap the
+         content to avoid any CSS collisions with our real content. -->
+    <div class="wrap">
+      <div class="masthead">
+        <div class="container">
+          <h3 class="masthead-title">
+            <a href="/" title="Home">Preparazione OII</a>
+            <small>Lezioni ed esercizi per la preparazione delle OII</small>
+          </h3>
+        </div>
+      </div>
+
+      <div class="container content">
+        <h1>PreparazioneOII</h1>
+Lezioni ed esercizi per la preparazione delle OII
+
+<h2> Indice </h2>
+
+<ol>
+  
+    <li>
+      <a href="/chapters/1-io_file/">I/O da file</a>
+    </li>
+  
+    <li>
+      <a href="/chapters/2-complessita/">Complessità Computazionale</a>
+    </li>
+  
+</ol>
+
+<h2> Link utili </h2>
+
+<br><a href="https://github.com/olimpiadi-informatica/oii">Lista ufficiale dei testi delle olimpiadi suddivisi per anno</a>
+<br><a href="http://hsin.hr/coci/">Olimpiadi online croate</a>
+
+<h2> Crediti </h2>
+Il lavoro quì proposto è basato sul <a href="http://www.imparando.net/sito/olimpiadi_di_informatica/guida_prima_edizione.pdf">testo ufficiale</a> (molto ben fatto) che potete trovare anche sul sito delle olimpiadi.  
+<br>Ho deciso di scrivere queste pagine per fornire un documento più semplice da leggere, concentrato solo sulle nozioni fondamentali tralasciando (purtroppo) i formalismi ed i dettagli teorici.
+
+
+      </div>
+    </div>
+
+    <label for="sidebar-checkbox" class="sidebar-toggle"></label>
+
+    <script>
+      (function(document) {
+        var toggle = document.querySelector('.sidebar-toggle');
+        var sidebar = document.querySelector('#sidebar');
+        var checkbox = document.querySelector('#sidebar-checkbox');
+
+        document.addEventListener('click', function(e) {
+          var target = e.target;
+
+          if(!checkbox.checked ||
+             sidebar.contains(target) ||
+             (target === checkbox || target === toggle)) return;
+
+          checkbox.checked = false;
+        }, false);
+      })(document);
+    </script>
+  </body>
+</html>
