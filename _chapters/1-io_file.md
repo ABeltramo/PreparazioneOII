@@ -2,8 +2,9 @@
 layout: post
 title: I/O da file
 ---
-# [Preparazione OII](README.md)
+
 ## I/O da file
+
 Il correttore automatico delle olimpiadi prevede che il vostro programma legga un input dal file *input.txt*, computi un risultato e lo restituisca nel file *output.txt*. Ne segue che una parte fondamentale del vostro lavoro riguarda la lettura e la scrittura da file testuali.  
 In C++ la manipolazione dei file avviene tramite la classe `fstream`; in particolare: 
 1. `ifstream`: (input file stream) permette di aprire un file per la lettura. (nel nostro caso sarà sempre *input.txt*).

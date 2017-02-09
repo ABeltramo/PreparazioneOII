@@ -2,8 +2,9 @@
 layout: post
 title: Complessità Computazionale
 ---
-# [Preparazione OII](README.md)
+
 ## Complessità computazionale
+
 I problemi che dovrete risolvere alle olimpiadi impongono due importanti limiti sui programmi che andrete a creare:
 
 1. **Memoria**: non si può superare un certo limite di memoria RAM occupata (ad esempio 256 MB)
@@ -25,8 +26,8 @@ void BubbleSort(int *array, int elemN){
              array[i] = array[i+1]; 
              array[i+1] = tmp;
            } 
-         }
-     }
+        }
+    }
  }
 ```
 
@@ -35,7 +36,7 @@ Innanzitutto definiamo cos'è per noi l'**istruzione**: un istruzione è una qua
 Nel calcolo della complessità computazionale siamo interessati a capire quanto *tempo* impiega un determinato algoritmo dato un input di dimensione **N**.
 Proviamo a rifare l'analisi per `BubbleSort` partendo dalle istruzioni più interne:
 
-```C++
+```c++
     int tmp = array[i];             // *******************
     array[i] = array[i+1];          //      BLOCCO A
     array[i+1] = tmp;               // *******************
@@ -43,7 +44,7 @@ Proviamo a rifare l'analisi per `BubbleSort` partendo dalle istruzioni più inte
 
 Queste tre istruzioni semplici impiegano ognuna tempo **C** quindi diremo che il blocco A impiega tempo **3C**. Proseguiamo verso l'esterno:
 
-```C++
+```c++
     for (int i=0; i<alto; i++){     // *******************
         if (array[i]>array[i+1]){   //
             // [... A ...]          //      BLOCCO B
@@ -84,7 +85,7 @@ Da qui in avanti useremo la notazione **O(tempo)** (da leggersi O grande di) per
 
 [Stupid Sort](https://it.wikipedia.org/wiki/Stupid_sort) è un algoritmo di ordinamento pessimo (basta leggerne il nome) eppure la prima cosa che salta all'occhio è il codice. Sono solo tre righe, [un solo ciclo](https://media.giphy.com/media/8McNH1aXZnVyE/giphy.gif) com'è possibile che sia così pessimo?
 
-```language
+```c++
 function stupid_sort(array)
    while not is_sorted(array)
      array = random_permutation(array)
@@ -94,7 +95,8 @@ Dato un array da ordinare si continua a permutarlo a random fino a quando esso n
 Intuitivamente riusciamo a capire che non sia una buona soluzione ma come possiamo dimostrare questa supposizione? Ipotizziamo che l'array di Input abbia N elementi al suo interno e analizziamo in dettaglio il codice precedente:
 
 1. `is_sorted()`: questa funzione dato un array restituisce `true` se esso è ordinato, `false` altrimenti. Per poter sapere se un array è ordinato è sufficiente il seguente codice:
-    ```C++
+
+    ```c++
     bool is_sorted(int array[N]){
         for(int i=0;i<4;i++){           // Scorro l'array da 0 a N-1
             if(array[i] > array[i+1])   // Se a[i] > a[i+1]
@@ -103,6 +105,7 @@ Intuitivamente riusciamo a capire che non sia una buona soluzione ma come possia
         return true;                    // Se ho passato tutto il for allora è ordinato
     }
     ```
+    
     Quì si nasconde il primo ciclo che aumenta il tempo di esecuzione. Per quanto sia una funzione semplice un ciclo sulla dimensione dell'input è sempre da evitare. `is_sorted()` impiega **N-1** passi per completare la sua esecuzione.
 2. `random_permutation()`: 
 
