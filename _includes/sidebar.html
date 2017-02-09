@@ -17,7 +17,7 @@
     {% endcomment %}
 
     {% for chapter in site.chapters %}
-      <a class="sidebar-nav-item{% if page.url == chapter.url %} active{% endif %}" href="{{ chapter.url }}">{{ chapter.title }}</a>
+      <a class="sidebar-nav-item{% if page.url == chapter.url %} active{% endif %}" href="{{site.baseurl}}{{ chapter.url }}">{{ chapter.title }}</a>
     {% endfor %}
     <span class="sidebar-nav-item">Currently v{{ site.version }}</span>
   </nav>

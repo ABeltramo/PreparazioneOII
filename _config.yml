@@ -8,8 +8,8 @@ relative_permalinks: false
 title:               Preparazione OII
 tagline:             'Lezioni ed esercizi per la preparazione delle OII'
 description:         ''
-url:                 http://lanyon.getpoole.com
-baseurl:             ''
+url:                 http://abeltra.me/PreparazioneOII/
+baseurl:             '/PreparazioneOII'
 collections:
   chapters:
     output: true
