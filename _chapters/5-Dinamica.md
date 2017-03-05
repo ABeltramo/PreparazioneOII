@@ -48,4 +48,5 @@ int Fibonacci(int n) {
 }
 ```
 
-Ottenendo una molto più efficiente soluzione lineare **O(N)**. Potreste notare che il vettore è superfluo per questo algoritmo in quanto sono necessarie solo due variabili (i due risultati precedenti) per calcolare Fibonacci.
+Ottenendo una molto più efficiente soluzione lineare **O(N)**.  
+Potreste notare che il vettore è superfluo per questo algoritmo in quanto sono necessarie solo due variabili (i due risultati precedenti) per calcolare Fibonacci. Ma questo è solo il primo esempio di programmazione dinamica!
